@@ -1,15 +1,11 @@
-package main
+package binarysearch
 
 import "fmt"
 
-func main() {
-	fmt.Println()
-}
-
 // Сложность: O(log n)
-func binarySearch(arr []int, x int) int {
-	if arr == nil || len(arr) == 0 {
-		return -1
+func binarySearch(arr []int, x int) (int, error) {
+	if len(arr) == 0 {
+		return -1, fmt.Errorf("len(arr) == 0")
 	}
 
 	left, right := 0, len(arr)-1
@@ -21,12 +17,12 @@ func binarySearch(arr []int, x int) int {
 
 		switch {
 		case guess == x:
-			return mid
+			return mid, nil
 		case guess > x:
 			right = mid - 1
 		default:
 			left = mid + 1
 		}
 	}
-	return -1
+	return -1, fmt.Errorf("no in arr")
 }
