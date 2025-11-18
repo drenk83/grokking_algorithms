@@ -8,12 +8,10 @@ func SelectionSort(arr []int) {
 }
 
 func findSmallest(arr []int, index int) int {
-	smallest := arr[index]
 	out := index
-	for ; index < len(arr); index++ {
-		if arr[index] < smallest {
-			smallest = arr[index]
-			out = index
+	for i := index; i < len(arr); i++ {
+		if arr[i] < arr[out] {
+			out = i
 		}
 	}
 	return out
