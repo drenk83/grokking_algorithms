@@ -9,7 +9,7 @@ var (
 	arr2 = makeArr(10_000_000)
 	arr3 = makeArr(100_000_000)
 	arr4 = makeArr(1_000_000_000)
-	indx = 17
+	indx = 1
 )
 
 var tests = []struct {
