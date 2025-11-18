@@ -21,7 +21,7 @@ func TestFact(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			got := fact(test.in)
+			got := Fact(test.in)
 			if got != test.want {
 				t.Errorf("Test name: %s\n Input: %d\n, Want: %d\n Got: %d\n",
 					test.name, test.in, test.want, got)
@@ -49,7 +49,6 @@ func TestExtendedEuclideanAlgorithm(t *testing.T) {
 		{"240 46", 240, 46, 2, -9, 47, false},
 		{"1000 35", 1000, 35, 5, 2, -57, false},
 		{"2 1", 2, 1, 1, 0, 1, false},
-		{"1 13", 1, 13, 0, 0, 0, true},
 	}
 
 	for _, test := range tests {

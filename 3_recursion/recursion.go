@@ -2,17 +2,26 @@ package recursion
 
 import "errors"
 
-func fact(x int) int {
+func Fact(x int) int {
 	if x == 1 || x == 0 {
 		return 1
 	} else {
-		return x * fact(x-1)
+		return x * Fact(x-1)
 	}
 }
 
+//func EuclideanAlgorithm(a, b int) (int, error) {
+// not now...
+//}
+
+// Input: 0 < b <= a
+// Output: GCD(a, b), x, y   (ax + by = gcd(a, b))
 func ExtendedEuclideanAlgorithm(a, b int) (int, int, int, error) {
-	if 0 >= b || b > a {
-		return 0, 0, 0, errors.New("0 < b <= a")
+	if a < b {
+		a, b = b, a
+	}
+	if b <= 0 {
+		return 0, 0, 0, errors.New("Division by zero or negative number")
 	}
 
 	r0, r1 := a, b
@@ -37,6 +46,8 @@ func ExtendedEuclideanAlgorithm(a, b int) (int, int, int, error) {
 }
 
 // a = q * b + r
+// Input: a, b
+// Output: q, r
 func DivideWithRemainder(a, b int) (int, int, error) {
 	if b == 0 {
 		return 0, 0, errors.New("Division by zero")
