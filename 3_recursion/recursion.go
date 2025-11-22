@@ -10,9 +10,20 @@ func Fact(x int) int {
 	}
 }
 
-//func EuclideanAlgorithm(a, b int) (int, error) {
-// not now...
-//}
+func EuclideanAlgorithm(a, b int) (int, error) {
+	if a <= 0 || b <= 0 {
+		return -1, errors.New("a <= 0 || b <= 0")
+	}
+	if a < b {
+		a, b = b, a
+	}
+
+	if a%b == 0 {
+		return b, nil
+	} else {
+		return EuclideanAlgorithm(b, a%b)
+	}
+}
 
 // Input: 0 < b <= a
 // Output: GCD(a, b), x, y   (ax + by = gcd(a, b))

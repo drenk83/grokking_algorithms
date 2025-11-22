@@ -30,6 +30,31 @@ func TestFact(t *testing.T) {
 	}
 }
 
+// do more tests
+func TestEuclideanAlgorithm(t *testing.T) {
+	tests := []struct {
+		name    string
+		a       int
+		b       int
+		out     int
+		boolErr bool
+	}{
+		{"Firsr", 25, 100, 25, false},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			got, err := EuclideanAlgorithm(test.a, test.b)
+			if (err != nil) != test.boolErr {
+				t.Errorf("%s", test.name)
+			}
+			if got != test.out {
+				t.Errorf("%s", test.name)
+			}
+		})
+	}
+}
+
 func TestExtendedEuclideanAlgorithm(t *testing.T) {
 	tests := []struct {
 		name    string
