@@ -8,7 +8,7 @@ import (
 var benchData []int
 
 func init() {
-	size := 1_000_000_000
+	size := 10_000_000
 	benchData = make([]int, size)
 
 	for i := range benchData {
