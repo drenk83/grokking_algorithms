@@ -19,3 +19,16 @@ func quicksort(arr []int) []int {
 
 	return append(append(quicksort(less), pivot), quicksort(greater)...)
 }
+
+// func quicksortInPlace(a []int) []int {
+// 	arr := make([]int, len(a))
+// 	copy(arr, a)
+
+// 	if len(arr) < 2 {
+// 		return arr
+// 	}
+
+// 	pivot := arr[0]
+
+// 	return arr
+// }
