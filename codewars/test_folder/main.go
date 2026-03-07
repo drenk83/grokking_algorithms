@@ -1,14 +1,21 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
+
+func Add(x, y int) int {
+	return x + y
+}
+
+func Minus(x, y int) int {
+	return x - y
+}
 
 func main() {
-	str := "go go go"
-	fmt.Println(strings.ReplaceAll(str, "go", "no"))
+	fmt.Println("test out")
 
-	str2 := "gogogo"
-	fmt.Println(strings.ReplaceAll(str2, "go", "no"))
+	x, y := 3, 7
+	
+	fmt.Println(Add(x, y))
+	fmt.Println(Minus(x, y))
 }
+
